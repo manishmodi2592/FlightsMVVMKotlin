@@ -3,7 +3,7 @@ package com.test.flighttestapp.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.test.flighttestapp.MainViewModel
+import com.test.flighttestapp.view_models.MainViewModel
 import com.test.flighttestapp.databinding.LayoutRowFlightBinding
 import com.test.flighttestapp.models.response.J
 import com.test.flighttestapp.view_models.FlightViewModel

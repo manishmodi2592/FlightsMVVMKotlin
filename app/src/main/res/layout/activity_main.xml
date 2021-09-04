@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.test.flighttestapp.MainViewModel" />
+            type="com.test.flighttestapp.view_models.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

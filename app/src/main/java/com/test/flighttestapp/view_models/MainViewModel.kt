@@ -1,10 +1,12 @@
-package com.test.flighttestapp
+package com.test.flighttestapp.view_models
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.test.flighttestapp.FlightSort
+import com.test.flighttestapp.SortingEnum
 import com.test.flighttestapp.data_fetching.FlightsRepository
 import com.test.flighttestapp.data_fetching.Response
 import com.test.flighttestapp.lib.listOfField
