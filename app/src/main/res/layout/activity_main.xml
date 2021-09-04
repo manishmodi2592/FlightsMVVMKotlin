@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.test.flighttestapp.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_fromCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large_font"
+                android:textStyle="bold"
+                android:text="@={viewModel.src}"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintTop_toTopOf="@id/iv_fromto"
+                app:layout_constraintBottom_toBottomOf="@id/iv_fromto"
+                app:layout_constraintEnd_toStartOf="@id/iv_fromto"
+                tools:text="BOM" />
+
+            <ImageView
+                android:id="@+id/iv_fromto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_from_to"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_toCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large_font"
+                android:textStyle="bold"
+                android:text="@={viewModel.dest}"
+                android:layout_marginStart="5dp"
+                app:layout_constraintTop_toTopOf="@id/iv_fromto"
+                app:layout_constraintBottom_toBottomOf="@id/iv_fromto"
+                app:layout_constraintStart_toEndOf="@id/iv_fromto"
+                tools:text="HYD" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_grey"
+                android:textSize="@dimen/medium_font"
+                android:text="@={viewModel.depDate}"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintTop_toTopOf="@id/tv_pax"
+                app:layout_constraintEnd_toStartOf="@id/iv_sep1"
+                tools:text="17 Oct" />
+
+            <ImageView
+                android:id="@+id/iv_sep1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_sep"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintTop_toTopOf="@id/tv_pax"
+                app:layout_constraintBottom_toBottomOf="@id/tv_pax"
+                app:layout_constraintEnd_toStartOf="@id/tv_pax"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_pax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_grey"
+                android:textSize="@dimen/medium_font"
+                android:layout_marginStart="5dp"
+                android:text="1 Adt"
+                app:layout_constraintTop_toBottomOf="@id/tv_fromCity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/iv_sep2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_sep"
+                android:layout_marginStart="5dp"
+                app:layout_constraintTop_toTopOf="@id/tv_pax"
+                app:layout_constraintBottom_toBottomOf="@id/tv_pax"
+                app:layout_constraintStart_toEndOf="@id/tv_pax"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_grey"
+                android:textSize="@dimen/medium_font"
+                android:layout_marginStart="5dp"
+                android:text="Economy"
+                app:layout_constraintTop_toTopOf="@id/tv_pax"
+                app:layout_constraintStart_toEndOf="@id/iv_sep2"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/iv_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sort"
+                app:layout_constraintTop_toTopOf="@id/tv_sort"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sort"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_sort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Sort"
+                android:textColor="@color/black_grey"
+                android:gravity="center"
+                android:textSize="@dimen/medium_font"
+                app:layout_constraintTop_toBottomOf="@id/tv_pax"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price"
+                app:layout_constraintStart_toEndOf="@id/iv_sort"
+                app:layout_constraintHorizontal_weight="1"
+                android:onClick="openSortWindow"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="@color/black_grey"
+                android:gravity="center"
+                android:textSize="@dimen/medium_font"
+                app:layout_constraintTop_toTopOf="@id/tv_sort"
+                app:layout_constraintLeft_toRightOf="@+id/tv_sort"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                android:onClick="openPriceWindow"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_header"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:indeterminateTint="#1a09d6"
+            android:layout_marginTop="-7dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

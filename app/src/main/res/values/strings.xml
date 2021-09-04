@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Flights</string>
+    <string name="duration_shortest_first">Duration Shortest First</string>
+    <string name="price_low_to_high">Price Low to High</string>
+    <string name="depart_earliest_first">Depart Earliest First</string>
+    <string name="arrival_earliest_first">Arrival Earliest First</string>
+    <string name="apply">Apply</string>
+</resources>
